@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
 	private bool facingRight;
 	private bool facingUp;
 	private bool isColliding = false;
-	private PlayerPush pp;
 
 
 	private Rigidbody2D rb;
@@ -35,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-<<<<<<< HEAD
         if(Input.GetKeyDown(KeyCode.RightArrow) && !isColliding)
         {
         	transform.position += new Vector3(0.5f ,0,0); 
@@ -56,48 +54,30 @@ public class PlayerMovement : MonoBehaviour
         {
         	isColliding = !isColliding;
         }
-=======
-        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
-        // Flip();
->>>>>>> 904816de18ab58b43b829f111b876d85e0655011
+    }
+	
+	    private void OnTriggerEnter2D(Collider2D other) {
+			Debug.Log("asdfkhas");
+			if(other.gameObject.tag == "heatSource"){
+				//start HP draining
+				Debug.Log("derretendo");
+			}
     }
 
-   /* void Flip() 
-    {
-    	if (movement.x < 0)
-    	{
-    		facingRight = false;
-    		transform.localRotation = Quaternion.Euler(0,0,0);
-    	}
-    	else if (movement.x > 0)
-    	{
-    		facingRight = true;
-    		transform.localRotation = Quaternion.Euler(0,0,0);
-    	}
-    	
-    	if(movement.y < 0)
-    	{
-    		facingUp = false;
-    		transform.localRotation = Quaternion.Euler(0,90,0);
-    	}
-    	else if (movement.y > 0)
-    	{
-    		facingUp = true;
-    		transform.localRotation = Quaternion.Euler(0,270,0);
-    	}
-    } **/
+	// private void OnCollisionStay2D(Collision2D other) {
+	// 	        Debug.Log("asdfkhas");
+    //     if(other.gameObject.tag == "heatSource"){
+    //         //start HP draining
+    //         Debug.Log("derretendo");
+	// }}
 
-	private void onCollisionEnter2D (Collider2D other)
-    {
-    	Debug.Log("hi");
-    	if(other.gameObject.tag == "Block")
-    	{
-    		Debug.Log("h0p");
-    		isColliding = true;
-    		pp.mov = movement;
-    		pp.isPushing = isColliding;
-    	}
+    // private void OnTriggerExit2D(Collider2D other) {
+    //     Debug.Log("asdfkhas");
 
-    }
+    //     if(other.gameObject.tag == "heatSource"){
+    //         //stop HP draining
+    //         Debug.Log("parou de derreter");
+    //     }
+    // }
 
 }
