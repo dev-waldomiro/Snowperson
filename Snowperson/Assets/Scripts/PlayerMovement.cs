@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
-        Flip();
+        // Flip();
     }
 
     void Flip() 
