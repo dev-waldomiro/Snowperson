@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 	public float speed;
 	private bool facingRight;
 	private bool facingUp;
+	private bool isColliding = false;
+	private PlayerPush pp;
 
 
 	private Rigidbody2D rb;
@@ -19,8 +21,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	rb = GetComponent<Rigidbody2D>();
-    	sprite = GetComponent<SpriteRenderer>();
+    	//rb = GetComponent<Rigidbody2D>();
+    	//prite = GetComponent<SpriteRenderer>();
+    	// GameObject.FindWithTag("Block").GetComponent<PlayerPush>();
     }
 
     // Update is called once per frame
@@ -32,16 +35,34 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
-        Flip();
+        if(Input.GetKeyDown(KeyCode.RightArrow) && !isColliding)
+        {
+        	transform.position += new Vector3(0.5f ,0,0); 
+        } 
+        else if(Input.GetKeyDown(KeyCode.LeftArrow) && !isColliding)
+        {
+        	transform.position -= new Vector3(0.5f,0,0); 
+        }
+        else if(Input.GetKeyDown(KeyCode.UpArrow) && !isColliding)
+        {
+        	transform.position += new Vector3(0,0.5f,0); 
+        } 
+        else if(Input.GetKeyDown(KeyCode.DownArrow) && !isColliding)
+        {
+        	transform.position -= new Vector3(0,0.5f,0);
+        }
+        else if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && isColliding)
+        {
+        	isColliding = !isColliding;
+        }
     }
 
-    void Flip() 
+   /* void Flip() 
     {
     	if (movement.x < 0)
     	{
     		facingRight = false;
-    		transform.localRotation = Quaternion.Euler(0,90,0);
+    		transform.localRotation = Quaternion.Euler(0,0,0);
     	}
     	else if (movement.x > 0)
     	{
@@ -59,7 +80,19 @@ public class PlayerMovement : MonoBehaviour
     		facingUp = true;
     		transform.localRotation = Quaternion.Euler(0,270,0);
     	}
-    }
+    } **/
 
+	private void onCollisionEnter2D (Collider2D other)
+    {
+    	Debug.Log("hi");
+    	if(other.gameObject.tag == "Block")
+    	{
+    		Debug.Log("h0p");
+    		isColliding = true;
+    		pp.mov = movement;
+    		pp.isPushing = isColliding;
+    	}
+
+    }
 
 }
