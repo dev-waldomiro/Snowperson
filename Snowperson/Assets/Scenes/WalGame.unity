@@ -177,6 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   movement: {x: 0, y: 0}
+  playerLife: {fileID: 0}
+  toggleTorch: {fileID: 0}
 --- !u!212 &42700806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -235,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 42700803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1129786145}
   m_Father: {fileID: 0}
@@ -255,6 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torch: {fileID: 1129786144}
   isLit: 1
+  inHeatSource: 0
+  playerLife: {fileID: 0}
 --- !u!61 &42700809
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -279,7 +283,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.243144, y: 0.5}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!95 &42700810
 Animator:
@@ -639,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129786144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.33, y: 0.3, z: 0}
+  m_LocalPosition: {x: 2.27, y: 0.22, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 3.4461765}
   m_Children: []
   m_Father: {fileID: 42700807}
