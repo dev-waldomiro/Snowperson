@@ -31,6 +31,7 @@ public class PlayerLife : MonoBehaviour
         }
 
         if(isDrainingLife){
+            FindObjectOfType<AudioManager>().Play("morrendo");
             GetComponentInChildren<TrailRenderer>().emitting = true;
             time += Time.deltaTime;
             if(time > tickRate){

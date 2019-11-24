@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+                if(Input.GetKey(KeyCode.R)){
+            Debug.Log("Escape");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     	animaMov.x = Input.GetAxisRaw("Horizontal");
     	animaMov.y = Input.GetAxisRaw("Vertical");
 
@@ -33,26 +38,27 @@ public class PlayerMovement : MonoBehaviour
     	animator.SetFloat("EixoY", animaMov.y);
     	animator.SetFloat("Veloc", animaMov.sqrMagnitude);
 
+
     }
 
     void FixedUpdate()
     {
     	//moving player
-        if(Input.GetKeyDown(KeyCode.RightArrow) && movement.x >= -0.1)
+        if(Input.GetKey(KeyCode.RightArrow) && movement.x >= -0.1)
         {
-        	transform.position += new Vector3(0.5f ,0,0); 
+        	transform.position += new Vector3(0.5f, 0,0)*speed; 
         } 
-        else if(Input.GetKeyDown(KeyCode.LeftArrow) && movement.x <= 0.1)
+        else if(Input.GetKey(KeyCode.LeftArrow) && movement.x <= 0.1)
         {
-        	transform.position -= new Vector3(0.5f,0,0); 
+        	transform.position -= new Vector3(0.5f, 0,0)*speed; 
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow) && movement.y >= -0.1)
+        else if(Input.GetKey(KeyCode.UpArrow) && movement.y >= -0.1)
         {
-        	transform.position += new Vector3(0,0.5f,0); 
+        	transform.position += new Vector3(0,0.5f,0)*speed; 
         } 
-        else if((Input.GetKeyDown(KeyCode.DownArrow)) && (movement.y <= 0.1))
+        else if((Input.GetKey(KeyCode.DownArrow)) && (movement.y <= 0.1))
         {
-        	transform.position -= new Vector3(0,0.5f,0);
+        	transform.position -= new Vector3(0,0.5f,0)*speed;
         } // if player is colliding with wall or box, he does not move. 
         else if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && isBox)
 		{

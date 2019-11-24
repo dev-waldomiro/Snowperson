@@ -156,6 +156,24 @@ MonoBehaviour:
     loop: 0
     clip: {fileID: 8300000, guid: 9027dc7bb2e75114d821482ca1f899ea, type: 3}
     source: {fileID: 0}
+  - name: morrendo
+    volume: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 9d25cb7dad7f99642a669898de1ad72e, type: 3}
+    source: {fileID: 0}
+  - name: andando
+    volume: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: cbbd28d9b2d06da408d4f398c44c9a15, type: 3}
+    source: {fileID: 0}
+  - name: buttonPress
+    volume: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 9027dc7bb2e75114d821482ca1f899ea, type: 3}
+    source: {fileID: 0}
   backMusic: 
 --- !u!4 &309008734
 Transform:
@@ -553,7 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b9a46300776384fb3fb6b2af1d709f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Game
+  nextScene: 1-1 VAi
+  nextScene2: 
   pauseMenuUI: {fileID: 0}
 --- !u!114 &1572592292
 MonoBehaviour:
