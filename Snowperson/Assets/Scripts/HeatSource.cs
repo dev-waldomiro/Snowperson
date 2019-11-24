@@ -22,7 +22,7 @@ public class HeatSource : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("asdfkhas");
+        //Debug.Log("asdfkhas");
         if(other.gameObject.tag == "Player"){
             //start HP draining
             Debug.Log("derretendo");
