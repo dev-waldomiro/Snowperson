@@ -91,6 +91,11 @@ public class PlayerMovement : MonoBehaviour
 				playerLife.isDrainingLife = true;
 				Debug.Log("derretendo");
 			}
+            if(other.gameObject.tag == "Coat"){
+                playerLife.hasCoat = true;
+                playerLife.coatDurability = 100f;
+                Destroy(other);
+            }
     }
 
 
@@ -104,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("parou de derreter");
             }
         }
+
     }
 
 }

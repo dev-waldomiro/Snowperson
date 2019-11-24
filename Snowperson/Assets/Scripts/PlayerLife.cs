@@ -12,6 +12,8 @@ public class PlayerLife : MonoBehaviour
     public float tickRate;
     public float damage;
     private float time;
+    public bool hasCoat = false;
+    public float coatDurabilty = 100f;
 
 
     // Start is called before the first frame update
@@ -23,14 +25,23 @@ public class PlayerLife : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(coatDurabilty <= 0){
+            hasCoat = false;
+            coatDurabilty = 100f;
+        }
 
         if(isDrainingLife){
             GetComponentInChildren<TrailRenderer>().emitting = true;
             time += Time.deltaTime;
             if(time > tickRate){
-                playerLife -= damage;
-                time = 0f;
+                if(hasCoat){
+                    playerLife -= (damage - 3)
+                    coatDurabilty -= 10;
+                    time = 0f; 
+                }else{
+                    playerLife -= damage;
+                    time = 0f;
+                }
             }
             //drain life
             Debug.Log("derretendo");
