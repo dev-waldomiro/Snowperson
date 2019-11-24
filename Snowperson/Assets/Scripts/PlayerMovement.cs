@@ -9,11 +9,14 @@ public class PlayerMovement : MonoBehaviour
 	private bool facingRight;
 	private bool facingUp;
 	private bool isColliding = false;
+    
 
 
 	private Rigidbody2D rb;
 	private SpriteRenderer sprite;
 	public Vector2 movement;
+    public PlayerLife playerLife;
+    public ToggleTorch toggleTorch;
 
 
 
@@ -57,27 +60,25 @@ public class PlayerMovement : MonoBehaviour
     }
 	
 	    private void OnTriggerEnter2D(Collider2D other) {
-			Debug.Log("asdfkhas");
+			Debug.Log("entrou");
 			if(other.gameObject.tag == "heatSource"){
-				//start HP draining
+                toggleTorch.inHeatSource = true;
+				playerLife.isDrainingLife = true;
 				Debug.Log("derretendo");
 			}
     }
 
-	// private void OnCollisionStay2D(Collision2D other) {
-	// 	        Debug.Log("asdfkhas");
-    //     if(other.gameObject.tag == "heatSource"){
-    //         //start HP draining
-    //         Debug.Log("derretendo");
-	// }}
 
-    // private void OnTriggerExit2D(Collider2D other) {
-    //     Debug.Log("asdfkhas");
 
-    //     if(other.gameObject.tag == "heatSource"){
-    //         //stop HP draining
-    //         Debug.Log("parou de derreter");
-    //     }
-    // }
+    private void OnTriggerExit2D(Collider2D other) {
+        Debug.Log("saiu");
+        if(other.gameObject.tag == "heatSource"){
+            toggleTorch.inHeatSource = false;
+            if(!toggleTorch.isLit){
+            playerLife.isDrainingLife = false;
+            Debug.Log("parou de derreter");
+            }
+        }
+    }
 
 }
