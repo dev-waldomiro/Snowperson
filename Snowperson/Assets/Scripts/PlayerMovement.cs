@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
             if(other.gameObject.tag == "Coat"){
                 playerLife.hasCoat = true;
                 playerLife.coatDurability = 100f;
-                Destroy(other);
+                Destroy(other.gameObject);
             }
     }
 
