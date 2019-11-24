@@ -6,6 +6,7 @@ using UnityEngine;
 public class MenuControl : MonoBehaviour
 {
     public string nextScene;
+    public string nextScene2;
     public static bool isPaused;
     public GameObject pauseMenuUI;
 
@@ -21,6 +22,13 @@ public class MenuControl : MonoBehaviour
     
     public void changeScene () {
         SceneManager.LoadScene(nextScene);
+        //if(nextScene == "FASE01") FindObjectOfType<AudioManager>().Play("Starting");
+        //else 
+        FindObjectOfType<AudioManager>().Play("buttonPress");
+    }
+
+    public void changeScene2 () {
+        SceneManager.LoadScene(nextScene2);
         //if(nextScene == "FASE01") FindObjectOfType<AudioManager>().Play("Starting");
         //else 
         FindObjectOfType<AudioManager>().Play("buttonPress");
