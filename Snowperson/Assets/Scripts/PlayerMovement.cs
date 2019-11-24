@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 	private Vector2 animaMov;
 	private Pushing push;
 	private bool isBox;
-	private Animator animator;
+	public Animator animator;
     public PlayerLife playerLife;
     public ToggleTorch toggleTorch;
 
@@ -29,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
     	animaMov.x = Input.GetAxisRaw("Horizontal");
     	animaMov.y = Input.GetAxisRaw("Vertical");
 
-    	animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
-    	animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
-    	animator.SetFloat("Speed", animaMov.sqrMagnitude);
+    	animator.SetFloat("EixoX", animaMov.x);
+    	animator.SetFloat("EixoY", animaMov.y);
+    	animator.SetFloat("Veloc", animaMov.sqrMagnitude);
 
     }
 
