@@ -8,12 +8,12 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField]
     public float playerLife = 100f;
+    public float coatDurability = 100f;
     public bool isDrainingLife = false;
     public float tickRate;
     public float damage;
     private float time;
     public bool hasCoat = false;
-    public float coatDurabilty = 100f;
 
 
     // Start is called before the first frame update
@@ -25,9 +25,9 @@ public class PlayerLife : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(coatDurabilty <= 0){
+        if(coatDurability <= 0){
             hasCoat = false;
-            coatDurabilty = 100f;
+            coatDurability = 100f;
         }
 
         if(isDrainingLife){
@@ -36,7 +36,7 @@ public class PlayerLife : MonoBehaviour
             if(time > tickRate){
                 if(hasCoat){
                     playerLife -= (damage - 3);
-                    coatDurabilty -= 10;
+                    coatDurability -= 10;
                     time = 0f; 
                 }else{
                     playerLife -= damage;
