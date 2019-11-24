@@ -35,7 +35,7 @@ public class PlayerLife : MonoBehaviour
             time += Time.deltaTime;
             if(time > tickRate){
                 if(hasCoat){
-                    playerLife -= (damage - 3)
+                    playerLife -= (damage - 3);
                     coatDurabilty -= 10;
                     time = 0f; 
                 }else{
