@@ -6,58 +6,83 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	public float speed;
-	private bool facingRight;
-	private bool facingUp;
-	private bool isColliding = false;
-    
-
-
-	private Rigidbody2D rb;
-	private SpriteRenderer sprite;
 	public Vector2 movement;
+	private Vector2 animaMov;
+	private Pushing push;
+	private bool isBox;
+	private Animator animator;
     public PlayerLife playerLife;
     public ToggleTorch toggleTorch;
 
 
 
-    // Start is called before the first frame update
+ // Start is called before the first frame update
     void Start()
     {
-    	//rb = GetComponent<Rigidbody2D>();
-    	//prite = GetComponent<SpriteRenderer>();
-    	// GameObject.FindWithTag("Block").GetComponent<PlayerPush>();
+    	push = GameObject.FindWithTag("Block").GetComponent<Pushing>();
+    	animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-   		movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y =Input.GetAxisRaw("Vertical");
+    	animaMov.x = Input.GetAxisRaw("Horizontal");
+    	animaMov.y = Input.GetAxisRaw("Vertical");
+
+    	animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
+    	animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
+    	animator.SetFloat("Speed", animaMov.sqrMagnitude);
+
     }
 
     void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow) && !isColliding)
+    	//moving player
+        if(Input.GetKeyDown(KeyCode.RightArrow) && movement.x >= -0.1)
         {
         	transform.position += new Vector3(0.5f ,0,0); 
         } 
-        else if(Input.GetKeyDown(KeyCode.LeftArrow) && !isColliding)
+        else if(Input.GetKeyDown(KeyCode.LeftArrow) && movement.x <= 0.1)
         {
         	transform.position -= new Vector3(0.5f,0,0); 
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow) && !isColliding)
+        else if(Input.GetKeyDown(KeyCode.UpArrow) && movement.y >= -0.1)
         {
         	transform.position += new Vector3(0,0.5f,0); 
         } 
-        else if(Input.GetKeyDown(KeyCode.DownArrow) && !isColliding)
+        else if((Input.GetKeyDown(KeyCode.DownArrow)) && (movement.y <= 0.1))
         {
         	transform.position -= new Vector3(0,0.5f,0);
-        }
-        else if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && isColliding)
-        {
-        	isColliding = !isColliding;
-        }
+        } // if player is colliding with wall or box, he does not move. 
+        else if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && isBox)
+		{
+			Debug.Log("is Box!!");
+			push.movingBoxes(movement);
+			isBox = false;
+		}    
     }
+
+	private void OnCollisionEnter2D (Collision2D other)
+    {
+    	Debug.Log("hi");
+    	if(other.gameObject.tag == "Block")
+    	{
+    		isBox = true;
+    	}
+    	foreach(ContactPoint2D hitPos in other.contacts)
+    	{
+    		Debug.Log(hitPos.normal);
+    		movement.y =hitPos.normal.y;
+    		movement.x = hitPos.normal.x;
+    	}
+
+    }
+
+    private void OnCollisionExit2D (Collision2D other) {
+    	isBox = false;
+    	movement = new Vector2 (0,0);
+    }
+    
 	
 	    private void OnTriggerEnter2D(Collider2D other) {
 			Debug.Log("entrou");
