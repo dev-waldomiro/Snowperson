@@ -27,8 +27,8 @@ public class WarningLineController : MonoBehaviour
         foreach (var heatSource in heatSources)
         {
             auxDist = Vector2.Distance((Vector2)this.gameObject.transform.position, (Vector2)heatSource.transform.position);
-            Debug.Log(auxDist +  "  auxDist");
-            if(auxDist > distance){
+            Debug.Log(auxDist +  "  auxDist  "  + heatSource.name);
+            if(auxDist < distance){
                 distance = auxDist;
             }
             Debug.Log(distance +  "  distance");
@@ -40,30 +40,19 @@ public class WarningLineController : MonoBehaviour
             //frio
             color.startColor = new Color(0.047f, 0.882f, 1f);
             emission.enabled = true;
-        }
+        }else
 
-        public void turnHot(){
+        if(distance < maxDist && distance > minDist){
+            Debug.Log("warm");
+            emission.enabled = false;
+        }else 
+
+        if(distance < minDist){
             Debug.Log("perto de heatsource");
             color.startColor = new Color(1f, 0f, 0f);
             emission.enabled = true;
         }
-
-        public void turnWarm(){
-            Debug.Log("warm");
-            emission.enabled = false;
-        }
-
-        // if(distance < maxDist && distance > minDist){
-        //     Debug.Log("warm");
-        //     emission.enabled = false;
-        // }
-
-        // if(distance < minDist){
-        //     Debug.Log("perto de heatsource");
-        //     color.startColor = new Color(1f, 0f, 0f);
-        //     emission.enabled = true;
-        // }
-
+        distance = 0x3f3f3f;
 
     }
 }
