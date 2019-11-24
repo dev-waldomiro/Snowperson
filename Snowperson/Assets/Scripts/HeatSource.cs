@@ -21,20 +21,20 @@ public class HeatSource : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        //Debug.Log("asdfkhas");
-        if(other.gameObject.tag == "Player"){
-            //start HP draining
-            Debug.Log("derretendo");
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D other) {
+    //     Debug.Log("asdfkhas");
+    //     if(other.gameObject.tag == "Player"){
+    //         //start HP draining
+    //         Debug.Log("derretendo");
+    //     }
+    // }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("asdfkhas");
+    // private void OnTriggerExit2D(Collider2D other) {
+    //     Debug.Log("asdfkhas");
 
-        if(other.gameObject.tag == "Player"){
-            //stop HP draining
-            Debug.Log("parou de derreter");
-        }
-    }
+    //     if(other.gameObject.tag == "Player"){
+    //         //stop HP draining
+    //         Debug.Log("parou de derreter");
+    //     }
+    // }
 }

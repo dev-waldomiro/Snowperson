@@ -8,6 +8,9 @@ public class ToggleTorch : MonoBehaviour
 
     public GameObject torch;
     public bool isLit = true;
+    public bool inHeatSource = false;
+    public PlayerLife playerLife;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +26,14 @@ public class ToggleTorch : MonoBehaviour
                 torch.GetComponent<Light2D>().enabled = false;
                 torch.GetComponent<ParticleSystem>().Stop();
                 isLit = false;
+                if(!inHeatSource)
+                    playerLife.isDrainingLife = false;
                 Debug.Log("apagou");
             }else{
                 torch.GetComponent<Light2D>().enabled = true;
                 torch.GetComponent<ParticleSystem>().Play();
                 isLit = true;
+                playerLife.isDrainingLife = true;
                 Debug.Log("acendeu");
             }
         }
