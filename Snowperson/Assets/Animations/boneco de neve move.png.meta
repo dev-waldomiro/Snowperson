@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,12 +113,21 @@ TextureImporter:
       name: boneco de neve move_0
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 6
         y: 98
         width: 19
         height: 23
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 60
+        y: 980
+        width: 190
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +143,21 @@ TextureImporter:
       name: boneco de neve move_1
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 37
         y: 98
         width: 20
         height: 24
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 370
+        y: 980
+        width: 200
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +173,21 @@ TextureImporter:
       name: boneco de neve move_2
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 7
         y: 66
         width: 17
         height: 23
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 70
+        y: 660
+        width: 170
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +203,21 @@ TextureImporter:
       name: boneco de neve move_3
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 40
         y: 66
         width: 17
         height: 24
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 400
+        y: 660
+        width: 170
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +233,21 @@ TextureImporter:
       name: boneco de neve move_4
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 8
         y: 34
         width: 17
         height: 23
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 80
+        y: 340
+        width: 170
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +263,21 @@ TextureImporter:
       name: boneco de neve move_5
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 39
         y: 34
         width: 17
         height: 24
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 400
+        y: 337
+        width: 170
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +293,21 @@ TextureImporter:
       name: boneco de neve move_6
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 5
         y: 3
         width: 21
         height: 23
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 50
+        y: 30
+        width: 210
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +323,21 @@ TextureImporter:
       name: boneco de neve move_7
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/boneco de neve move.png.meta
         x: 37
         y: 3
         width: 22
         height: 24
       alignment: 1
       pivot: {x: 0, y: 1}
+=======
+        x: 370
+        y: 30
+        width: 220
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/boneco de neve move x10.png.meta
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,7 +358,9 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: bd4e62197ac74174490a794bd4dff5bc, type: 3}
+      name: _NormalMap
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

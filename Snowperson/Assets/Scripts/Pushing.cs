@@ -20,13 +20,13 @@ public class Pushing : MonoBehaviour
 
     public void movingBoxes (Vector2 movement) {
     		if(movement.y > 0.5){
-    			transform.position -= new Vector3(0,0.5f,0); 
+    			transform.position -= new Vector3(0,1f,0); 
     		} else if (movement.y < -0.5) {
-    			transform.position += new Vector3(0,0.5f,0);
+    			transform.position += new Vector3(0,1f,0);
     		} else if (movement.x > 0.5) {
-    			transform.position -= new Vector3(0.5f ,0,0);
+    			transform.position -= new Vector3(1f ,0,0);
     		} else if (movement.x < -0.5) {
-    			transform.position += new Vector3(0.5f,0,0);
+    			transform.position += new Vector3(1f,0,0);
     		} 	
     }
 

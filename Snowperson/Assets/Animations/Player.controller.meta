@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Snowperson/Assets/Animations/Player.controller.meta
 guid: 5d94bd9971c93584bbaf3af7d195b1f9
+=======
+guid: f46c0e9d882ca7d46ba9974252443205
+>>>>>>> Stashed changes:Snowperson/Assets/Animations/Player.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
